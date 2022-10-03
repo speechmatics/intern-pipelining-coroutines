@@ -1,3 +1,6 @@
+# Copyright 2022 Cantab Research Ltd.
+# Licensed under the MIT license. See LICENSE.txt in the project root for details.
+
 cmake_minimum_required(VERSION 3.20)
 
 project(Pipelining_Coroutines)
@@ -23,7 +26,7 @@ list(TRANSFORM target_sources PREPEND "src/")
 
 add_executable(pc ${target_sources})
 
-target_include_directories(pc PUBLIC inc_coro inc)
+target_include_directories(pc PUBLIC 3rd_party/libcoro/inc 3rd_party/libcoro/vendor/tartanllama/expected/inc)
 
 set(target_static_dependencies
         liblibcoro.a
